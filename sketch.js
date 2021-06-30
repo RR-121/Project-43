@@ -1,6 +1,7 @@
 var bg, bg2, form, system, code, security, retryButton;
 var score = 0;
 var num_answers = 0;
+var mistakes = 0;
 
 function preload() {
   bg = loadImage("aladdin_cave.jpg");
@@ -30,10 +31,22 @@ function draw() {
     textSize(40);
     text("TREASURE UNLOCKED", 250, 470);
   }
-  else if (score !== 3 && num_answers === 3) {
+  else if (score !== 3 && num_answers === 3 && mistakes === 1) {
     textSize(20);
     fill("white");
     text("Oops! Looks like one of your answers is wrong!", 300, 250);
+    retryButton.show();
+    retryButton.mousePressed(() => {
+      security.showButtonsAndInputBoxes();
+      retryButton.hide();
+      score = 0;
+      num_answers = 0;
+    })
+  }
+  else if (score !== 3 && num_answers === 3 && mistakes > 1) {
+    textSize(20);
+    fill("white");
+    text("Oops! Looks like some of your answers is wrong!", 300, 250);
     retryButton.show();
     retryButton.mousePressed(() => {
       security.showButtonsAndInputBoxes();
