@@ -38,6 +38,7 @@ class Security {
                 this.button1.hide();
                 this.access1.hide();
                 num_answers++;
+                mistakes++;
             }
         });
 
@@ -52,6 +53,7 @@ class Security {
                 this.button2.hide();
                 this.access2.hide();
                 num_answers++;
+                mistakes++;
             }
         });
 
@@ -66,6 +68,7 @@ class Security {
                 this.button3.hide();
                 this.access3.hide();
                 num_answers++;
+                mistakes++;
             }
         });
     }
