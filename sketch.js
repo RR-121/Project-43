@@ -41,18 +41,20 @@ function draw() {
       retryButton.hide();
       score = 0;
       num_answers = 0;
+      mistakes = 0;
     })
   }
   else if (score !== 3 && num_answers === 3 && mistakes > 1) {
     textSize(20);
     fill("white");
-    text("Oops! Looks like some of your answers is wrong!", 300, 250);
+    text("Oops! Looks like some of your answers are wrong!", 300, 250);
     retryButton.show();
     retryButton.mousePressed(() => {
       security.showButtonsAndInputBoxes();
       retryButton.hide();
       score = 0;
       num_answers = 0;
+      mistakes = 0;
     })
   }
 
